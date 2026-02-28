@@ -1,0 +1,14 @@
+/* Sidebar background */
+.fi-sidebar {
+    background-color: #0f172a !important; /* slate-900 */
+}
+
+/* Sidebar item active */
+.fi-sidebar-item-active {
+    background-color: #1e293b !important; /* slate-800 */
+}
+
+/* Sidebar text */
+.fi-sidebar-item-label {
+    color: #e2e8f0 !important;
+}

@@ -1,0 +1,10 @@
+/* ===== Filament Sidebar Custom ===== */
+
+.fi-sidebar {
+    background-color: white;
+    width: 260px;
+}
+
+.dark .fi-sidebar {
+    background-color:var(--gray-900);
+}
