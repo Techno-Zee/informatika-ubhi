@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->ondelete('cascade');
+            $table->string('nim',30)->unique();
+            $table->foreignId('class_room_id')->constrained('class_rooms')->ondelete('cascade');
+            $table->integer('school_year');
+            $table->enum('gender', ['male', 'female'])->default('male');
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->enum('status', ['active', 'on_lave', 'graduated' , 'inactive'])->default('active');
             $table->timestamps();
         });
     }
