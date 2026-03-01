@@ -2,7 +2,7 @@
 
 .fi-sidebar {
     background-color: white;
-    width: 260px;
+    max-width: 260px;
 }
 
 .dark .fi-sidebar {
