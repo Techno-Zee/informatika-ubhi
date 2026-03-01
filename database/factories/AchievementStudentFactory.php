@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\{Student, Achievement};
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class AchievementStudentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "student_id" => Student::inRandomOrder()->value('id') ?? Student::factory(),
+            "achievement_id" => Achievement::inRandomOrder()->value('id') ?? Achievement::factory(),
         ];
     }
 }

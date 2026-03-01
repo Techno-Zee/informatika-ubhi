@@ -17,7 +17,9 @@ class ClassRoomFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->word() . ' ' . fake()->randomNumber(2),
+            'capacity' => fake()->numberBetween(20, 40),
+            'school_year' => fake()->numberBetween(2020, 2025),
         ];
     }
 }

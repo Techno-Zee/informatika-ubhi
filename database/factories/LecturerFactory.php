@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,9 @@ class LecturerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::inRandomOrder()->value('id') ?? User::factory(),
+            'lecturer_number' => fake()->unique()->numerify('LEC#####'),
+            'position' => fake()->jobTitle(),
         ];
     }
 }

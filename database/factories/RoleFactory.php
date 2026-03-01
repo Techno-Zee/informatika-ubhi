@@ -17,7 +17,8 @@ class RoleFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->unique()->word(), // char sebaiknya diganti string, tapi di migration char, jadi pakai word
+            'description' => fake()->sentence(),
         ];
     }
 }

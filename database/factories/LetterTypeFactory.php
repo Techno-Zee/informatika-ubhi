@@ -17,7 +17,9 @@ class LetterTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->word(),
+            'description' => fake()->sentence(),
+            'template_path' => fake()->optional()->filePath(),
         ];
     }
 }

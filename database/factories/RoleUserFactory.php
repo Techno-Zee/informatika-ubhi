@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\{User, Role};
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class RoleUserFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "user_id" => User::inRandomOrder()->value('id') ?? User::factory(),
+            "role_id" => Role::inRandomOrder()->value('id') ?? Role::factory(),
         ];
     }
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->ondelete('cascade');
             $table->string('nim',30)->unique();
+            $table->char('photo_path', 255)->nullable();
             $table->foreignId('class_room_id')->constrained('class_rooms')->ondelete('cascade');
             $table->integer('school_year');
             $table->enum('gender', ['male', 'female'])->default('male');

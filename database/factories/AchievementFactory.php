@@ -17,7 +17,11 @@ class AchievementFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->sentence(),
+            'description' => fake()->paragraph(),
+            'level' => fake()->randomElement(['university', 'regional', 'national', 'international']),
+            'year' => fake()->year(),
+            'evidence_path' => fake()->optional()->filePath(),
         ];
     }
 }

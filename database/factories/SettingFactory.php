@@ -17,7 +17,8 @@ class SettingFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'config_key' => fake()->unique()->word(),
+            'config_value' => fake()->sentence(),
         ];
     }
 }
