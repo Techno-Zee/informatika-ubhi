@@ -9,4 +9,15 @@ class Announcement extends Model
 {
     /** @use HasFactory<\Database\Factories\AnnouncementFactory> */
     use HasFactory;
+
+    protected $fillable = ['title', 'content', 'file_path', 'published_at', 'created_by'];
+
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }

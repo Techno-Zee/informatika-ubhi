@@ -5,8 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Activity_logs extends Model
+class ActivityLogs extends Model
 {
     /** @use HasFactory<\Database\Factories\ActivityLogsFactory> */
     use HasFactory;
+
+        protected $fillable = ['user_id', 'action', 'description', 'ip_address'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

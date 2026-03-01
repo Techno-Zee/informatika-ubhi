@@ -9,4 +9,11 @@ class Lecturer extends Model
 {
     /** @use HasFactory<\Database\Factories\LecturerFactory> */
     use HasFactory;
+
+    protected $fillable = ['user_id', 'lecturer_number', 'position'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

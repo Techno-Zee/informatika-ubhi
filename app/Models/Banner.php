@@ -9,4 +9,10 @@ class Banner extends Model
 {
     /** @use HasFactory<\Database\Factories\BannerFactory> */
     use HasFactory;
+
+    protected $fillable = ['title', 'image_path', 'link_url', 'is_active'];
+
+    protected $casts = [
+        'is_active' => 'boolean',
+    ];
 }

@@ -9,4 +9,11 @@ class LetterType extends Model
 {
     /** @use HasFactory<\Database\Factories\LetterTypeFactory> */
     use HasFactory;
+
+    protected $fillable = ['name', 'description', 'template_path'];
+
+    public function letterRequests()
+    {
+        return $this->hasMany(LetterRequest::class);
+    }
 }
