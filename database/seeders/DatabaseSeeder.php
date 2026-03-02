@@ -20,6 +20,7 @@ use App\Models\{
     Setting
 };
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -43,6 +44,11 @@ class DatabaseSeeder extends Seeder
         foreach ($roles as $roleData) {
             Role::firstOrCreate(['name' => $roleData['name']], $roleData);
         }
+        User::create([
+            'name' => 'Super Admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('admin'), // Ganti dengan password yang lebih aman
+        ]);
         User::factory(20)->create();
         RoleUser::factory(10)->create();
         ClassRoom::factory(5)->create();
