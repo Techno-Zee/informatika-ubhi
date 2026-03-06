@@ -6,6 +6,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -60,6 +61,19 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->navigationGroups([
+            NavigationGroup::make()
+                ->label('Content')
+                ->icon('heroicon-o-document-text'),
+
+            NavigationGroup::make()
+                ->label('Academic')
+                ->icon('heroicon-o-academic-cap'),
+
+            NavigationGroup::make()
+                ->label('Administration')
+                ->icon('heroicon-o-cog-6-tooth'),
+        ]);
     }
 }

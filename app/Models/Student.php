@@ -11,8 +11,15 @@ class Student extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'nim', 'photo_path', 'class_room_id', 'school_year',
-        'gender', 'address', 'phone', 'status'
+        'user_id',
+        'nim',
+        'photo_path',
+        'class_room_id',
+        'school_year',
+        'gender',
+        'address',
+        'phone',
+        'status'
     ];
 
     protected $casts = [
@@ -23,6 +30,10 @@ class Student extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function getNameAttribute()
+    {
+        return $this->user->name;
     }
 
     public function classroom()

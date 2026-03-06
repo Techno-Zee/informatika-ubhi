@@ -25,6 +25,12 @@ class LetterRequest extends Model
         return $this->belongsTo(Student::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    
+
     public function letterType()
     {
         return $this->belongsTo(LetterType::class);
