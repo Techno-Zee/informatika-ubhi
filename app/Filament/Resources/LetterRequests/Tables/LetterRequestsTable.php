@@ -1,26 +1,26 @@
 <?php
 
-namespace App\Filament\Resources\Students\Tables;
+namespace App\Filament\Resources\LetterRequests\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\Repeater\TableColumn;
+use Filament\Forms\Components\RichEditor\TextColor;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class StudentsTable
+class LetterRequestsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('user.name')->label('Name'),
-                TextColumn::make('user.email')->label('Email'),
-                TextColumn::make('classroom.name')->label('Class Room'),
-                TextColumn::make('gender')->label('Gender'),
-                TextColumn::make('status')
-                    ->label('Status')
-                    ->badge()
+                TextColumn::make('student.user.name')->label('Student Name')->searchable(),
+                TextColumn::make('letterType.name')->label('Letter Type')->searchable(),
+                TextColumn::make('purpose')->limit(50)->searchable(),
+                TextColumn::make('status')->badge()->searchable(),
             ])
             ->filters([
                 //
