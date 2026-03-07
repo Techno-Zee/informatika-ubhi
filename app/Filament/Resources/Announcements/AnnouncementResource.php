@@ -19,7 +19,7 @@ class AnnouncementResource extends Resource
 {
     protected static ?string $model = Announcement::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BookOpen;
     protected static string|UnitEnum|null $navigationGroup = 'Content';
     protected static ?string $recordTitleAttribute = 'Announcement';
 

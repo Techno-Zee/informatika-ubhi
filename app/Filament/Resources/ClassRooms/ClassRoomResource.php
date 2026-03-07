@@ -19,7 +19,7 @@ class ClassRoomResource extends Resource
 {
     protected static ?string $model = ClassRoom::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BuildingLibrary;
     protected static string|UnitEnum|null $navigationGroup = 'Academic';
     protected static ?string $recordTitleAttribute = 'ClassRoom';
 
