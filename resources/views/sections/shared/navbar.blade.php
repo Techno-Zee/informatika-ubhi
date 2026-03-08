@@ -43,7 +43,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="https://informatics-ubhi.id" class="nav-item nav-link ">Home</a>
+                <a href="{{ route('home') }}" class="nav-item nav-link ">Home</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">Profile</a>
@@ -60,7 +60,7 @@
                             style="color: #060606; transition: color 0.2s;">Sarana dan Prasarana</a>
                     </div>
                 </div>
-                <a href="https://informatics-ubhi.id/berita" class="nav-item nav-link">Berita</a>
+                <a href="{{ route('news') }}" class="nav-item nav-link">Berita</a>
                 <a href="https://informatics-ubhi.id/pengumuman" class="nav-item nav-link">Pengumuman</a>
 
 
